@@ -1,0 +1,55 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.code-workspace
+
+# opencode + tools config (contains local secrets / API keys)
+opencode.json
+opencode.jsonc
+.opencode/
+
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# builds
+.next/
+out/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+# env files (never commit real secrets)
+.env
+.env.*
+!.env.example
+!.env.local.example
+
+# logs & runtime
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+
+# testsprite runtime artifacts (reports, logs, tokens)
+testsprite_tests/tmp/
+
+# keys / certs
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# vercel
+.vercel

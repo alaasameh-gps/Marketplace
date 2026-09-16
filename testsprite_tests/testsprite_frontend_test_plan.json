@@ -1,0 +1,3054 @@
+[
+  {
+    "id": "TC001",
+    "title": "Log in to an existing account",
+    "description": "A returning user can log in and reach the authenticated state successfully.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user is signed in"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an authenticated area is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Complete checkout with sandbox payment",
+    "description": "This verifies that a customer can place an order from checkout and complete the sandbox payment flow to reach the order confirmation.",
+    "category": "Checkout and Sandbox Payment",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a customer account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /checkout"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the shipping details"
+      },
+      {
+        "type": "action",
+        "description": "Submit the checkout flow"
+      },
+      {
+        "type": "action",
+        "description": "Complete the sandbox payment step"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an order confirmation is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the payment simulation completed successfully"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Register as a new customer",
+    "description": "A visitor can create a new customer account and become signed in successfully.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /register"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the registration email field with a valid new email"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with a valid password"
+      },
+      {
+        "type": "action",
+        "description": "Select the customer role"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user is signed in"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an authenticated account area is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Log out from an authenticated session",
+    "description": "A signed-in user can log out and return to the public signed-out state.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the user menu"
+      },
+      {
+        "type": "action",
+        "description": "Choose to log out"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the signed-out state is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify authenticated account actions are no longer visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Add a product to the cart from product details",
+    "description": "This verifies that a customer can open a product, add it to the persistent cart, and see the item in the cart afterward.",
+    "category": "Shopping Cart",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a customer account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Open a product detail page"
+      },
+      {
+        "type": "action",
+        "description": "Add the product to the cart"
+      },
+      {
+        "type": "action",
+        "description": "Open the cart page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cart contains the added product"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Switch the site to Arabic and browse in RTL",
+    "description": "This verifies that a visitor can switch the interface to Arabic and continue browsing public pages with the expected RTL layout.",
+    "category": "Localization",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the language switcher and select Arabic"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to browse products"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open the categories page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the interface is rendered in RTL layout"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify localized public page content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Switch the site locale and keep browsing",
+    "description": "This verifies that a visitor can switch between Arabic and English and continue browsing the site with the updated language direction.",
+    "category": "Locale Switching",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Switch the locale to Arabic"
+      },
+      {
+        "type": "action",
+        "description": "Open the products catalog"
+      },
+      {
+        "type": "action",
+        "description": "Switch the locale back to English"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the interface is displayed in the selected locale"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the text direction matches the selected locale"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Open a product detail page from the catalog",
+    "description": "A visitor can open a product from the catalog and view its detail information.",
+    "category": "Product Catalog Browsing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Open a product card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product detail page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify product information is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Admin signs in and sees the platform overview",
+    "description": "This verifies that an admin can log in and reach the dashboard with KPI overview and management areas.",
+    "category": "Admin Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify KPI overview data is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify access to admin management sections is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Register as a new vendor",
+    "description": "A visitor can create a new vendor account and become signed in successfully.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /register"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the registration email field with a valid new email"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with a valid password"
+      },
+      {
+        "type": "action",
+        "description": "Select the vendor role"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user is signed in"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a vendor area is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Browse and filter the public product catalog",
+    "description": "This verifies that a visitor can search, filter, and page through the product catalog and see matching results.",
+    "category": "Public Catalog Browsing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Search for a product"
+      },
+      {
+        "type": "action",
+        "description": "Apply a catalog filter"
+      },
+      {
+        "type": "action",
+        "description": "Go to the next page of results"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify matching products are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the catalog pagination updates"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Switch the site back to English and browse in LTR",
+    "description": "This verifies that a visitor can switch the interface to English and continue browsing public pages with the expected LTR layout.",
+    "category": "Localization",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the language switcher and select English"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to browse products"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to open the brands page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the interface is rendered in LTR layout"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify localized public page content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Update cart quantity and totals",
+    "description": "This verifies that a customer can change item quantity in the cart and see the totals update accordingly.",
+    "category": "Shopping Cart",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a customer account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /cart"
+      },
+      {
+        "type": "action",
+        "description": "Increase the quantity of an item in the cart"
+      },
+      {
+        "type": "action",
+        "description": "Decrease the quantity of the same item in the cart"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cart totals are updated"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Vendor signs in and sees the dashboard overview",
+    "description": "This verifies that an approved vendor can log in and reach the store dashboard with overview stats and product management access.",
+    "category": "Vendor Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendor"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify store overview stats are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify access to vendor product management is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC015",
+    "title": "Browse the product catalog with filters and pagination",
+    "description": "A visitor can refine the product catalog with search and filters and see the list update across pages.",
+    "category": "Product Catalog Browsing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Enter a search keyword into the catalog search field"
+      },
+      {
+        "type": "action",
+        "description": "Select a category filter"
+      },
+      {
+        "type": "action",
+        "description": "Select a brand filter"
+      },
+      {
+        "type": "action",
+        "description": "Move to the next product page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a refined product list is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify pagination results are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC016",
+    "title": "Review checkout order summary before payment",
+    "description": "This verifies that a customer can open checkout with items in the cart and review the order details before placing the order.",
+    "category": "Checkout and Sandbox Payment",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a customer account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /checkout"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the order summary is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify shipping information is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC017",
+    "title": "Admin reviews platform dashboard KPIs",
+    "description": "This verifies that an admin can log in and see the overall platform KPI overview.",
+    "category": "Admin Platform Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for an admin account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify platform KPI summaries are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC018",
+    "title": "Open a product and navigate to its related collections",
+    "description": "This verifies that a visitor can open a product detail page and move to its matching category, brand, and vendor pages.",
+    "category": "Public Catalog Browsing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Open a product detail page"
+      },
+      {
+        "type": "action",
+        "description": "Open the related category page"
+      },
+      {
+        "type": "action",
+        "description": "Open the related brand page"
+      },
+      {
+        "type": "action",
+        "description": "Open the related vendor page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the related collection pages are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product detail context is preserved across navigation"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC019",
+    "title": "Browse the product catalog with search and filters",
+    "description": "This verifies that a visitor can search, filter, and see matching products in the catalog.",
+    "category": "Vendor Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a product search term"
+      },
+      {
+        "type": "action",
+        "description": "Select a category filter"
+      },
+      {
+        "type": "action",
+        "description": "Select a brand filter"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify matching products are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product list reflects the applied filters"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC020",
+    "title": "Create a localized vendor product",
+    "description": "This verifies that a vendor can create a new product with localized information and see it listed afterward.",
+    "category": "Vendor Store Operations",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a vendor account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendor/products/new"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the product details"
+      },
+      {
+        "type": "action",
+        "description": "Save the new product"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new product appears in the vendor product list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC021",
+    "title": "Vendor creates a localized product",
+    "description": "This verifies that a vendor can create a new product with localized details and see it appear in the store product list.",
+    "category": "Vendor Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendor/products/new"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the product name fields for both locales"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the price and stock fields"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a valid image URL field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the product form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new product appears in the vendor product list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC022",
+    "title": "Update account profile information",
+    "description": "This verifies that a customer can change profile name and phone details and see the updated account information saved.",
+    "category": "Customer Account and Orders",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a customer account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /account"
+      },
+      {
+        "type": "action",
+        "description": "Update the profile name"
+      },
+      {
+        "type": "action",
+        "description": "Update the phone number"
+      },
+      {
+        "type": "action",
+        "description": "Save the profile changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated account information is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC023",
+    "title": "Vendor views dashboard and store performance",
+    "description": "This verifies that a vendor can log in and see the dashboard overview with store stats.",
+    "category": "Vendor Store Operations",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a vendor account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendor"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify vendor dashboard statistics are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC024",
+    "title": "Manage vendors and users from admin lists",
+    "description": "This verifies that an admin can review vendor approvals and user management from the admin area.",
+    "category": "Admin Platform Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for an admin account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/vendors"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/users"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify vendor management records are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify user management records are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC025",
+    "title": "Admin approves or suspends a vendor",
+    "description": "This verifies that an admin can review vendors and change a vendor status from the vendor management page.",
+    "category": "Admin Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/vendors"
+      },
+      {
+        "type": "action",
+        "description": "Select a vendor status change"
+      },
+      {
+        "type": "action",
+        "description": "Save the vendor status update"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the vendor status is updated in the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the vendor record remains visible"
+      },
+      {
+        "type": "action",
+        "description": "Return to the admin vendors list and move the Demo Store back to Approved"
+      },
+      {
+        "type": "assertion",
+        "description": "Demo Store status shows Approved at the end of the test"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC026",
+    "title": "Browse categories, brands, and vendor storefronts",
+    "description": "A visitor can move from listing pages into a category, brand, or vendor storefront and see the matching filtered products.",
+    "category": "Category, Brand and Vendor Browsing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /categories"
+      },
+      {
+        "type": "action",
+        "description": "Open a category"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /brands"
+      },
+      {
+        "type": "action",
+        "description": "Open a brand"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendors"
+      },
+      {
+        "type": "action",
+        "description": "Open a vendor storefront"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the matching filtered products are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the vendor storefront information is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC027",
+    "title": "Remove an item from the cart",
+    "description": "This verifies that a customer can remove an item from the cart and the cart recalculates after the item disappears.",
+    "category": "Shopping Cart",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a customer account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /cart"
+      },
+      {
+        "type": "action",
+        "description": "Remove an item from the cart"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the item is no longer shown in the cart"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cart totals are recalculated"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC028",
+    "title": "Open a product and navigate to its related pages",
+    "description": "This verifies that a visitor can open a product detail page and reach the matching category, brand, and vendor pages from there.",
+    "category": "Vendor Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Open a product from the catalog"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view the related category"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view the related brand"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view the related vendor"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the related category, brand, and vendor pages are reachable"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product detail information is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC029",
+    "title": "Manage products categories and brands as an admin",
+    "description": "This verifies that an admin can open the product, category, and brand management pages and access their records.",
+    "category": "Admin Platform Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for an admin account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/products"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/categories"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/brands"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify product management records are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify category and brand management records are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC030",
+    "title": "Change account password",
+    "description": "This verifies that a customer can submit a password change from the account page and see the change complete.",
+    "category": "Customer Account and Orders",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a customer account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /account"
+      },
+      {
+        "type": "action",
+        "description": "Change the password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the password update"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a password change confirmation is visible"
+      },
+      {
+        "type": "action",
+        "description": "Change the account password back to TestSprite123! so the seeded customer stays usable"
+      },
+      {
+        "type": "assertion",
+        "description": "The restore to TestSprite123! is confirmed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC031",
+    "title": "Edit an existing vendor product",
+    "description": "This verifies that a vendor can update an existing product and see the saved changes reflected in the product list or detail view.",
+    "category": "Vendor Store Operations",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a vendor account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendor/products"
+      },
+      {
+        "type": "action",
+        "description": "Open a product for editing"
+      },
+      {
+        "type": "action",
+        "description": "Update the product details"
+      },
+      {
+        "type": "action",
+        "description": "Save the product changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated product information is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC032",
+    "title": "Move through catalog pagination",
+    "description": "This verifies that a visitor can move to another catalog page and continue browsing products.",
+    "category": "Vendor Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the catalog pagination controls"
+      },
+      {
+        "type": "action",
+        "description": "Go to the next product page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a different set of products is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify catalog pagination remains available"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC033",
+    "title": "Review admin orders payments commissions and settings",
+    "description": "This verifies that an admin can navigate through operational management pages and view orders, payments, commissions, and site settings.",
+    "category": "Admin Platform Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for an admin account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/orders"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/payments"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/commissions"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/settings"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify operational management records are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify site settings are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC034",
+    "title": "Cancel an eligible order",
+    "description": "This verifies that a customer can cancel an order that is still eligible and see the order status change to cancelled.",
+    "category": "Customer Account and Orders",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a customer account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /account/orders"
+      },
+      {
+        "type": "action",
+        "description": "Open an eligible order"
+      },
+      {
+        "type": "action",
+        "description": "Cancel the order"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the order status changes to cancelled"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC035",
+    "title": "Review vendor orders and commissions",
+    "description": "This verifies that a vendor can inspect incoming orders and view commission earnings from the vendor area.",
+    "category": "Vendor Store Operations",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a vendor account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendor/orders"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendor/commissions"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify vendor orders are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify commission earnings are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC036",
+    "title": "Vendor edits an existing product",
+    "description": "This verifies that a vendor can open an existing product, update its details, and see the changes reflected in the product list.",
+    "category": "Vendor Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendor/products"
+      },
+      {
+        "type": "action",
+        "description": "Open an existing product for editing"
+      },
+      {
+        "type": "action",
+        "description": "Update the product details"
+      },
+      {
+        "type": "action",
+        "description": "Save the product changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated product information is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC037",
+    "title": "Clear all items from the cart",
+    "description": "This verifies that a customer can clear the entire cart and see an empty cart state afterward.",
+    "category": "Shopping Cart",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a customer account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /cart"
+      },
+      {
+        "type": "action",
+        "description": "Clear the cart"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an empty cart state is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC038",
+    "title": "View order history and open an order",
+    "description": "This verifies that a customer can browse order history and open a specific order detail to review the full order information.",
+    "category": "Customer Account and Orders",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a customer account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /account/orders"
+      },
+      {
+        "type": "action",
+        "description": "Open an order from the history list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the order detail view is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the order information is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC039",
+    "title": "Vendor deletes an existing product",
+    "description": "This verifies that a vendor can remove a product from the store and no longer see it in the product list.",
+    "category": "Vendor Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendor/products"
+      },
+      {
+        "type": "action",
+        "description": "Open an existing product for editing"
+      },
+      {
+        "type": "action",
+        "description": "Delete the product"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product is removed from the vendor list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC040",
+    "title": "Reject invalid login credentials",
+    "description": "A user sees an invalid credentials message when logging in with incorrect details.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with an unrecognized email"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with an incorrect password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an invalid credentials message is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user remains on the login page"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC041",
+    "title": "Admin updates an order status",
+    "description": "This verifies that an admin can review orders and change an order status from the order management page.",
+    "category": "Admin Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/orders"
+      },
+      {
+        "type": "action",
+        "description": "Select an order status change"
+      },
+      {
+        "type": "action",
+        "description": "Save the order status update"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the order status is updated in the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated order remains visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC042",
+    "title": "Browse categories brands and vendors from their directory pages",
+    "description": "This verifies that a visitor can open the category, brand, and vendor directories and reach a listing page from each.",
+    "category": "Public Catalog Browsing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /categories"
+      },
+      {
+        "type": "action",
+        "description": "Open a category page"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /brands"
+      },
+      {
+        "type": "action",
+        "description": "Open a brand page"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendors"
+      },
+      {
+        "type": "action",
+        "description": "Open a vendor page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify each collection listing page is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC043",
+    "title": "Vendor updates an order status",
+    "description": "This verifies that a vendor can review store orders and update an order status successfully.",
+    "category": "Vendor Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendor/orders"
+      },
+      {
+        "type": "action",
+        "description": "Select an order status change"
+      },
+      {
+        "type": "action",
+        "description": "Save the order status update"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the order status is updated in the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated order remains visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC044",
+    "title": "Admin manages a product record",
+    "description": "This verifies that an admin can create or edit a product and see the catalog update.",
+    "category": "Admin Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/products"
+      },
+      {
+        "type": "action",
+        "description": "Create or edit a product"
+      },
+      {
+        "type": "action",
+        "description": "Save the product changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the catalog product list is updated"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC045",
+    "title": "Admin manages a category",
+    "description": "This verifies that an admin can create or edit a category and see the updated category list.",
+    "category": "Admin Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/categories"
+      },
+      {
+        "type": "action",
+        "description": "Create or edit a category"
+      },
+      {
+        "type": "action",
+        "description": "Save the category changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the category list is updated"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC046",
+    "title": "Admin manages a brand",
+    "description": "This verifies that an admin can create or edit a brand and see the updated brand list.",
+    "category": "Admin Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/brands"
+      },
+      {
+        "type": "action",
+        "description": "Create or edit a brand"
+      },
+      {
+        "type": "action",
+        "description": "Save the brand changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the brand list is updated"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC047",
+    "title": "Delete a vendor product",
+    "description": "This verifies that a vendor can delete one of their products and no longer see it in the product list afterward.",
+    "category": "Vendor Store Operations",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a vendor account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendor/products"
+      },
+      {
+        "type": "action",
+        "description": "Delete a product"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the deleted product is no longer visible in the list"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC048",
+    "title": "Show login validation feedback",
+    "description": "A user sees validation feedback when required login fields are missing or invalid.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Leave the email field empty"
+      },
+      {
+        "type": "action",
+        "description": "Leave the password field empty"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify login validation feedback is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user remains on the login page"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC049",
+    "title": "Block cancellation for a non-cancellable order",
+    "description": "This verifies that a customer cannot cancel an order that is no longer eligible and sees cancellation prevented by the order state.",
+    "category": "Customer Account and Orders",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login credentials for a customer account"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /account/orders"
+      },
+      {
+        "type": "action",
+        "description": "Open a non-cancellable order"
+      },
+      {
+        "type": "action",
+        "description": "Attempt to cancel the order"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify cancellation is prevented"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the order status remains unchanged"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC050",
+    "title": "Vendor reviews commission earnings",
+    "description": "This verifies that a vendor can open the commissions page and view earnings and commission records.",
+    "category": "Vendor Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the login password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /vendor/commissions"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the commission summary is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify commission records are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC051",
+    "title": "Remove a single cart item updates the total",
+    "description": "Deleting one line leaves other lines and a correct subtotal.",
+    "category": "Customer Cart",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testsprite.customer@example.com / TestSprite123!"
+      },
+      {
+        "type": "action",
+        "description": "Add two different products to the cart and open /en/cart"
+      },
+      {
+        "type": "action",
+        "description": "Remove one of the items"
+      },
+      {
+        "type": "assertion",
+        "description": "Only the removed item disappears and the subtotal equals the remaining item"
+      }
+    ]
+  },
+  {
+    "id": "TC052",
+    "title": "Clear cart empties the cart and shows the empty state",
+    "description": "Clearing removes all items and the cart shows an empty message.",
+    "category": "Customer Cart",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testsprite.customer@example.com / TestSprite123!"
+      },
+      {
+        "type": "action",
+        "description": "Add a product to the cart and open /en/cart"
+      },
+      {
+        "type": "action",
+        "description": "Use the Clear/empty cart action"
+      },
+      {
+        "type": "assertion",
+        "description": "The cart shows an empty-cart message with a Browse products link"
+      }
+    ]
+  },
+  {
+    "id": "TC053",
+    "title": "Checkout with an empty cart shows the empty message",
+    "description": "Opening checkout with nothing in the cart shows an empty-cart notice, not an error.",
+    "category": "Customer Checkout",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testsprite.customer@example.com / TestSprite123! and ensure the cart is empty"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to http://localhost:3000/en/checkout"
+      },
+      {
+        "type": "assertion",
+        "description": "An empty-cart message and a link to products are displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC054",
+    "title": "Checkout validates required shipping fields",
+    "description": "Submitting checkout without address data shows validation errors.",
+    "category": "Customer Checkout",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testsprite.customer@example.com / TestSprite123!"
+      },
+      {
+        "type": "action",
+        "description": "Add a product to the cart and go to /en/checkout"
+      },
+      {
+        "type": "action",
+        "description": "Submit the order form leaving required fields empty"
+      },
+      {
+        "type": "assertion",
+        "description": "Validation errors or a hard stop prevents submitting with empty required fields"
+      }
+    ]
+  },
+  {
+    "id": "TC055",
+    "title": "Placing the same order twice returns one order (idempotency)",
+    "description": "Repeated checkout submissions must not duplicate orders or fail with \"Cart is empty\".",
+    "category": "Customer Checkout",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testsprite.customer@example.com / TestSprite123!"
+      },
+      {
+        "type": "action",
+        "description": "Add a product to the cart and go to /en/checkout"
+      },
+      {
+        "type": "action",
+        "description": "Fill the shipping address and place the order (submit twice quickly / double click)"
+      },
+      {
+        "type": "assertion",
+        "description": "Exactly one order is created; the confirmation appears and no \"Cart is empty\" error is thrown"
+      },
+      {
+        "type": "assertion",
+        "description": "The order history contains only one entry for that order"
+      }
+    ]
+  },
+  {
+    "id": "TC056",
+    "title": "Order history lists orders and detail shows items",
+    "description": "A customer can review their orders and open one to see its details.",
+    "category": "Customer Orders",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testsprite.customer@example.com / TestSprite123!"
+      },
+      {
+        "type": "action",
+        "description": "Open the account orders page (e.g., /en/account/orders)"
+      },
+      {
+        "type": "assertion",
+        "description": "A list of the customer orders is visible"
+      },
+      {
+        "type": "action",
+        "description": "Open the most recent order"
+      },
+      {
+        "type": "assertion",
+        "description": "The order detail shows items, quantities, prices and order status"
+      }
+    ]
+  },
+  {
+    "id": "TC057",
+    "title": "Profile update persists after reload",
+    "description": "Changing profile fields saves and survives a reload.",
+    "category": "Customer Account",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testsprite.customer@example.com / TestSprite123!"
+      },
+      {
+        "type": "action",
+        "description": "Open the account page (e.g., /en/account)"
+      },
+      {
+        "type": "action",
+        "description": "Set a distinct phone number / name and save"
+      },
+      {
+        "type": "assertion",
+        "description": "A success message appears"
+      },
+      {
+        "type": "action",
+        "description": "Reload the page"
+      },
+      {
+        "type": "assertion",
+        "description": "The updated values are still shown"
+      }
+    ]
+  },
+  {
+    "id": "TC058",
+    "title": "Change password rejects a wrong current password",
+    "description": "The current-password check fails with an error when the current password is wrong.",
+    "category": "Customer Account",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testsprite.customer@example.com / TestSprite123!"
+      },
+      {
+        "type": "action",
+        "description": "Open the account page, enter a WRONG current password and a new valid password, submit"
+      },
+      {
+        "type": "assertion",
+        "description": "An error about the current password is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "The password is NOT changed (logging in with TestSprite123! still works)"
+      }
+    ]
+  },
+  {
+    "id": "TC059",
+    "title": "Vendor dashboard shows store name and KPI widgets",
+    "description": "The vendor dashboard overview renders the store name and sales/earnings metrics.",
+    "category": "Vendor Dashboard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open the vendor area (e.g., /en/vendor)"
+      },
+      {
+        "type": "assertion",
+        "description": "The vendor dashboard shows the Demo Store name"
+      },
+      {
+        "type": "assertion",
+        "description": "KPI widgets (e.g., total sales, earnings, orders) are visible"
+      }
+    ]
+  },
+  {
+    "id": "TC060",
+    "title": "Vendor product form validates required fields and price",
+    "description": "Creating a product without required fields or with a bad price shows errors.",
+    "category": "Vendor Products",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/vendor/products/new and submit the empty form"
+      },
+      {
+        "type": "assertion",
+        "description": "Validation errors appear for missing name/category/price"
+      },
+      {
+        "type": "action",
+        "description": "Enter a negative or non-numeric price and submit"
+      },
+      {
+        "type": "assertion",
+        "description": "The form blocks the invalid price with an error"
+      }
+    ]
+  },
+  {
+    "id": "TC061",
+    "title": "Vendor creates a localized product with success confirmation",
+    "description": "Creating a product with EN and AR names shows a success toast and the product appears in the list with correct values.",
+    "category": "Vendor Products",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/vendor/products/new and fill name EN + name AR, description, category (Electronics), price 49.99, stock 10, status active, a single image URL, and submit"
+      },
+      {
+        "type": "assertion",
+        "description": "A success confirmation appears on the products list"
+      },
+      {
+        "type": "assertion",
+        "description": "The new product is the first row and shows the submitted price and stock"
+      }
+    ]
+  },
+  {
+    "id": "TC062",
+    "title": "Vendor creates a product with an existing name without crashing",
+    "description": "Re-using an existing product name must succeed with a unique slug, not a database crash.",
+    "category": "Vendor Products",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/vendor/products/new and create a product named \"Test Product (EN)\" (same name as an earlier test product)"
+      },
+      {
+        "type": "assertion",
+        "description": "The product is created successfully (no duplicate-key database error appears)"
+      },
+      {
+        "type": "assertion",
+        "description": "The products list has two separate rows with the same name but different entries"
+      }
+    ]
+  },
+  {
+    "id": "TC063",
+    "title": "Vendor edits a product and values persist",
+    "description": "Updating price and stock reflects in the list after saving.",
+    "category": "Vendor Products",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open the vendor products list and edit a Seed Product (change price and stock)"
+      },
+      {
+        "type": "assertion",
+        "description": "Saving succeeds"
+      },
+      {
+        "type": "assertion",
+        "description": "The list row shows the updated price and stock"
+      }
+    ]
+  },
+  {
+    "id": "TC064",
+    "title": "Vendor toggles product status",
+    "description": "A product status can be flipped between draft/active/inactive in the form.",
+    "category": "Vendor Products",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open the edit form of a product, change its status from active to inactive, save"
+      },
+      {
+        "type": "assertion",
+        "description": "The status badge in the list changes accordingly"
+      }
+    ]
+  },
+  {
+    "id": "TC065",
+    "title": "Vendor deletes a product",
+    "description": "Deleting a product removes it from the vendor list.",
+    "category": "Vendor Products",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Create a throwaway product then delete it from the products list (confirm the dialog)"
+      },
+      {
+        "type": "assertion",
+        "description": "The row disappears from the list"
+      }
+    ]
+  },
+  {
+    "id": "TC066",
+    "title": "Vendor orders page lists orders for the demo store",
+    "description": "Orders containing demo-store products appear in the vendor orders list with detail.",
+    "category": "Vendor Orders",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open the vendor orders page (e.g., /en/vendor/orders)"
+      },
+      {
+        "type": "assertion",
+        "description": "At least one order entry is listed"
+      },
+      {
+        "type": "action",
+        "description": "Open an order detail"
+      },
+      {
+        "type": "assertion",
+        "description": "The order shows product items, quantities and totals for the vendor"
+      }
+    ]
+  },
+  {
+    "id": "TC067",
+    "title": "Vendor commissions page shows an earnings summary",
+    "description": "The vendor sees commission amounts and totals for the store.",
+    "category": "Vendor Finance",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open the vendor commissions page (e.g., /en/vendor/commissions)"
+      },
+      {
+        "type": "assertion",
+        "description": "Commission/earnings records or a summary is displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC068",
+    "title": "Vendor store settings persist and show on the storefront",
+    "description": "Updating store name/description saves and is reflected publicly.",
+    "category": "Vendor Settings",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open the vendor settings page, change the description and save"
+      },
+      {
+        "type": "assertion",
+        "description": "Saving reports success"
+      },
+      {
+        "type": "action",
+        "description": "Open the public storefront /en/vendors/demo-store"
+      },
+      {
+        "type": "assertion",
+        "description": "The storefront displays the updated description"
+      }
+    ]
+  },
+  {
+    "id": "TC069",
+    "title": "Admin dashboard shows KPIs and all sections are reachable",
+    "description": "The admin dashboard renders metrics and every admin sidebar link navigates.",
+    "category": "Admin Dashboard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin"
+      },
+      {
+        "type": "assertion",
+        "description": "KPI widgets (orders, revenue, users, vendors, products) are visible"
+      },
+      {
+        "type": "action",
+        "description": "Click each admin sidebar section: Users, Vendors, Products, Categories, Brands, Orders, Payments, Commissions, Settings"
+      },
+      {
+        "type": "assertion",
+        "description": "Each section loads its page with content"
+      }
+    ]
+  },
+  {
+    "id": "TC070",
+    "title": "Admin can filter users by role and find a customer",
+    "description": "The user management list supports filtering and locating the seeded customer.",
+    "category": "Admin Users",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin/users and filter by the customer role"
+      },
+      {
+        "type": "assertion",
+        "description": "The list shows customer accounts including testsprite.customer@example.com"
+      }
+    ]
+  },
+  {
+    "id": "TC071",
+    "title": "Admin toggles a user status and restores it",
+    "description": "A user can be suspended and reactivated; the state is restored at the end.",
+    "category": "Admin Users",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin/users, suspend a non-essential test user, then reactivate/activate it"
+      },
+      {
+        "type": "assertion",
+        "description": "The status change controls work and the final state is active"
+      }
+    ]
+  },
+  {
+    "id": "TC072",
+    "title": "Admin reviews vendors and re-opens the demo store",
+    "description": "Vendor management shows records; changing status works; the demo store is restored to approved at the end.",
+    "category": "Admin Vendors",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin/vendors"
+      },
+      {
+        "type": "assertion",
+        "description": "Vendor rows including Demo Store are visible with status badges"
+      },
+      {
+        "type": "action",
+        "description": "Use an Approve/Reject/Suspend action on a pending vendor, and make sure the Demo Store is left/appears as approved"
+      },
+      {
+        "type": "assertion",
+        "description": "The vendors list reflects the change"
+      }
+    ]
+  },
+  {
+    "id": "TC073",
+    "title": "Admin products list renders and opens a product",
+    "description": "The admin can browse products and open one from the list.",
+    "category": "Admin Products",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin/products"
+      },
+      {
+        "type": "assertion",
+        "description": "A products table with name/price/stock/status is visible"
+      },
+      {
+        "type": "action",
+        "description": "Open a product from the table"
+      },
+      {
+        "type": "assertion",
+        "description": "A product detail/edit page renders the product data"
+      }
+    ]
+  },
+  {
+    "id": "TC074",
+    "title": "Admin manages a category end to end",
+    "description": "Category create/edit and status controls work in the admin UI.",
+    "category": "Admin Catalog",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin/categories, create a category \"Test Category UI\", edit its name, save"
+      },
+      {
+        "type": "assertion",
+        "description": "The category appears/updates in the list"
+      }
+    ]
+  },
+  {
+    "id": "TC075",
+    "title": "Admin manages a brand end to end",
+    "description": "Brand create/edit works in the admin UI.",
+    "category": "Admin Catalog",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin/brands, create a brand \"Test Brand UI\", save"
+      },
+      {
+        "type": "assertion",
+        "description": "The brand appears in the list"
+      }
+    ]
+  },
+  {
+    "id": "TC076",
+    "title": "Admin orders list and detail render",
+    "description": "The admin can review all orders and open a detail view.",
+    "category": "Admin Orders",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin/orders"
+      },
+      {
+        "type": "assertion",
+        "description": "An orders table with numbers, customers and totals is visible"
+      },
+      {
+        "type": "action",
+        "description": "Open an order"
+      },
+      {
+        "type": "assertion",
+        "description": "The order detail page shows items and totals"
+      }
+    ]
+  },
+  {
+    "id": "TC077",
+    "title": "Admin payments list renders",
+    "description": "The payments admin page displays payment records.",
+    "category": "Admin Finance",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin/payments"
+      },
+      {
+        "type": "assertion",
+        "description": "A payments table (or an informative empty state) is displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC078",
+    "title": "Admin commissions list and summary render",
+    "description": "Commission records and summary are visible to the admin.",
+    "category": "Admin Finance",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin/commissions"
+      },
+      {
+        "type": "assertion",
+        "description": "Commission records or a summary is displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC079",
+    "title": "Admin settings page loads and saves",
+    "description": "The settings form renders and submits without errors.",
+    "category": "Admin Settings",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin/settings"
+      },
+      {
+        "type": "assertion",
+        "description": "A settings form (e.g., commission rate) is visible"
+      },
+      {
+        "type": "action",
+        "description": "Save the settings form as-is"
+      },
+      {
+        "type": "assertion",
+        "description": "Saving completes without an error"
+      }
+    ]
+  },
+  {
+    "id": "TC080",
+    "title": "Arabic home page loads with RTL direction",
+    "description": "The Arabic locale serves Arabic UI with a right-to-left layout.",
+    "category": "i18n",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to http://localhost:3000/ar"
+      },
+      {
+        "type": "assertion",
+        "description": "The page html dir attribute is \"rtl\" and lang is \"ar\""
+      },
+      {
+        "type": "assertion",
+        "description": "Arabic headings/labels are rendered (e.g., header/footer in Arabic)"
+      }
+    ]
+  },
+  {
+    "id": "TC081",
+    "title": "Arabic catalog and product pages load",
+    "description": "Products listing and a product detail render in Arabic with RTL.",
+    "category": "i18n",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to http://localhost:3000/ar/products"
+      },
+      {
+        "type": "assertion",
+        "description": "The page loads in Arabic with a right-to-left layout"
+      },
+      {
+        "type": "action",
+        "description": "Open any product (e.g., Smart Watch)"
+      },
+      {
+        "type": "assertion",
+        "description": "The product detail page renders in Arabic"
+      }
+    ]
+  },
+  {
+    "id": "TC082",
+    "title": "Arabic vendor dashboard loads",
+    "description": "Signed-in vendor sees the dashboard in Arabic.",
+    "category": "i18n",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Arabic login http://localhost:3000/ar/login and sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /ar/vendor"
+      },
+      {
+        "type": "assertion",
+        "description": "The vendor dashboard renders in Arabic with RTL layout"
+      }
+    ]
+  },
+  {
+    "id": "TC083",
+    "title": "Arabic admin users page loads",
+    "description": "Signed-in admin sees admin pages in Arabic.",
+    "category": "i18n",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Arabic login http://localhost:3000/ar/login and sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /ar/admin/users"
+      },
+      {
+        "type": "assertion",
+        "description": "The admin users page renders in Arabic with RTL layout"
+      }
+    ]
+  },
+  {
+    "id": "TC084",
+    "title": "Anonymous visitor is blocked from admin and vendor areas",
+    "description": "Signed-out users cannot reach admin or vendor workspaces.",
+    "category": "Role Based Access",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open http://localhost:3000/en/admin while signed out"
+      },
+      {
+        "type": "assertion",
+        "description": "Access is denied (redirect to login or an unauthorized message) and no admin content shows"
+      },
+      {
+        "type": "action",
+        "description": "Open http://localhost:3000/en/vendor while signed out"
+      },
+      {
+        "type": "assertion",
+        "description": "Access is denied and no vendor dashboard shows"
+      }
+    ]
+  },
+  {
+    "id": "TC085",
+    "title": "Customer cannot access vendor or admin workspaces",
+    "description": "A signed-in customer must not see vendor/admin areas.",
+    "category": "Role Based Access",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testsprite.customer@example.com / TestSprite123!"
+      },
+      {
+        "type": "action",
+        "description": "Open http://localhost:3000/en/vendor"
+      },
+      {
+        "type": "assertion",
+        "description": "An unauthorized message is shown and no vendor dashboard renders"
+      },
+      {
+        "type": "action",
+        "description": "Open http://localhost:3000/en/admin"
+      },
+      {
+        "type": "assertion",
+        "description": "An unauthorized message is shown and no admin dashboard renders"
+      }
+    ]
+  },
+  {
+    "id": "TC086",
+    "title": "Vendor cannot access the admin workspace",
+    "description": "A signed-in vendor is blocked from the admin area.",
+    "category": "Role Based Access",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open http://localhost:3000/en/admin"
+      },
+      {
+        "type": "assertion",
+        "description": "An unauthorized message is shown and no admin dashboard renders"
+      }
+    ]
+  },
+  {
+    "id": "TC087",
+    "title": "Admin cannot act as a customer (cart/checkout blocked)",
+    "description": "An admin attempting customer flows is redirected or blocked.",
+    "category": "Role Based Access",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open http://localhost:3000/en/checkout"
+      },
+      {
+        "type": "assertion",
+        "description": "An unauthorized/customer-only message is shown instead of a checkout form"
+      }
+    ]
+  },
+  {
+    "id": "TC088",
+    "title": "Cart persists across logout and re-login",
+    "description": "Items added by a customer remain after signing out and back in.",
+    "category": "Customer Cart",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testsprite.customer@example.com / TestSprite123!"
+      },
+      {
+        "type": "action",
+        "description": "Add Smart Watch to the cart"
+      },
+      {
+        "type": "action",
+        "description": "Log out, then log back in with the same customer"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/cart"
+      },
+      {
+        "type": "assertion",
+        "description": "The previously added item is still in the cart"
+      }
+    ]
+  },
+  {
+    "id": "TC089",
+    "title": "Product card shows a discount badge for sale items",
+    "description": "Compare-at prices show a discount badge on the card.",
+    "category": "Catalog",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to http://localhost:3000/en/products"
+      },
+      {
+        "type": "action",
+        "description": "Locate the Smart Watch card (it has a compare-at price)"
+      },
+      {
+        "type": "assertion",
+        "description": "The card shows a visible discount/badge element (e.g., a percentage or struck-through price)"
+      }
+    ]
+  },
+  {
+    "id": "TC090",
+    "title": "Out-of-stock product shows an out-of-stock state",
+    "description": "An active product with zero stock displays as unavailable on the card and detail page.",
+    "category": "Catalog",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to http://localhost:3000/en/products"
+      },
+      {
+        "type": "action",
+        "description": "Find the \"Test Out of Stock Item\" card"
+      },
+      {
+        "type": "assertion",
+        "description": "The card shows an Out of stock label and no working Add to cart"
+      },
+      {
+        "type": "action",
+        "description": "Open the \"Test Out of Stock Item\" product detail page"
+      },
+      {
+        "type": "assertion",
+        "description": "The detail page indicates the product is out of stock and disables adding"
+      }
+    ]
+  },
+  {
+    "id": "TC091",
+    "title": "Language switcher toggles between Arabic and English",
+    "description": "The locale menu switches both ways and direction follows.",
+    "category": "i18n",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open http://localhost:3000/en/products"
+      },
+      {
+        "type": "action",
+        "description": "Open the Language selector and choose Arabic"
+      },
+      {
+        "type": "assertion",
+        "description": "The URL becomes /ar/... and the page renders RTL with Arabic labels"
+      },
+      {
+        "type": "action",
+        "description": "Open the Language selector and choose English"
+      },
+      {
+        "type": "assertion",
+        "description": "The URL returns to /en/... and the page renders LTR with English labels"
+      }
+    ]
+  },
+  {
+    "id": "TC092",
+    "title": "Vendor creates a product with brand, image and AR name",
+    "description": "A fully filled localized product form with brand and image submits successfully.",
+    "category": "Vendor Products",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/vendor/products/new and fill EN/AR names, description, category Electronics, brand (e.g., TechCorp), price 88.50, stock 5, status draft, one image URL, and submit"
+      },
+      {
+        "type": "assertion",
+        "description": "The submit succeeds and the products list contains the new row"
+      },
+      {
+        "type": "action",
+        "description": "Delete the created product to leave the list clean"
+      }
+    ]
+  },
+  {
+    "id": "TC093",
+    "title": "Admin filters users by a search term",
+    "description": "The admin users list narrows when searching by email/name.",
+    "category": "Admin Users",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin/users and type \"testsprite.customer\" into the search box"
+      },
+      {
+        "type": "assertion",
+        "description": "The list narrows to the matching customer account"
+      }
+    ]
+  },
+  {
+    "id": "TC094",
+    "title": "Admin searches products by name",
+    "description": "The admin products list narrows when searching by name.",
+    "category": "Admin Products",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as admin.test@example.com / AdminTest1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/admin/products and search for \"Seed Product 5\""
+      },
+      {
+        "type": "assertion",
+        "description": "The results narrow to the matching product row"
+      }
+    ]
+  },
+  {
+    "id": "TC095",
+    "title": "Cart total persists when leaving and returning to the cart page",
+    "description": "Navigating away and back keeps the cart items and totals.",
+    "category": "Customer Cart",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testsprite.customer@example.com / TestSprite123!"
+      },
+      {
+        "type": "action",
+        "description": "Add two items to the cart and note the subtotal on /en/cart"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the home page and back to /en/cart"
+      },
+      {
+        "type": "assertion",
+        "description": "The same items and subtotal are still displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC096",
+    "title": "Vendor commissions summary reflects placed orders",
+    "description": "The commissions page shows non-zero earnings after orders exist.",
+    "category": "Vendor Finance",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Sign in as testvendor@example.com / TestVendor1234!"
+      },
+      {
+        "type": "action",
+        "description": "Open /en/vendor/commissions"
+      },
+      {
+        "type": "assertion",
+        "description": "Commission/earnings data (amounts or summary) is displayed without errors"
+      }
+    ]
+  }
+]
